@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <div class="card text-center">
+        
+        <div class="card-body"> 
+            <form>
+            <div class="row"><div class="mb-3">
+            <label for="formNombre" class="form-label">Nombre de Usuario</label>
+            <input type="text" class="form-control" [(ngModel)]="usuario.nombre" name="nombreNuevo" placeholder="nombre de usuario">
+          </div>
+          <div class="mb-3">
+            <label for="formMail" class="form-label">Mail</label>
+            <input type="text" class="form-control" [(ngModel)]="usuario.mail" name="mailNuevo" placeholder="mail">
+          </div>
+          <div class="mb-3">
+            <label for="formClave" class="form-label">Clave</label>
+            <input type="text" class="form-control" [(ngModel)]="usuario.clave" name="claveNueva" placeholder="clave">
+          </div>
+        </div>
+        <div class="mr-3">
+            <button type="text" class="btn btn-secondary mr-5" routerLink="/lista-productos">volver</button>
+            <button type="submit" class="btn btn-success"(click)="agregarUsuario()">agregar</button>
+        </div>
+    </form>
+            </div></div></div>
+       
+       
+

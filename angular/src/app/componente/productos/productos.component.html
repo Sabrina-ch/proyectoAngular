@@ -1,0 +1,67 @@
+
+<app-menu> </app-menu>
+<div class="container mt-4">
+  
+    <div class="card "  >
+    <div class="card-body">
+     
+     <button  class="btn btn-success " style="float:right" routerLink="/productos-bm">Agregar</button>
+   
+    
+    
+     <div class="col-sm-3" >
+      <label>Buscar:</label>
+         <input id="buscar" [(ngModel)]="buscar" placeholder="buscar ">
+     </div>
+   
+   
+
+  <table class="table">
+    <thead>
+      <tr>
+        
+         <th >Nombre</th>
+        <th >mail</th>
+        <th >id</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let item of usuarios | transformacion: buscar" >
+        <td>
+          <p appHighlight><label > {{item.nombre}}</label></p>
+        <!---<input *ngIf="modificar==item.id" type="text" name="nombre{{item.id}}" [(ngModel)] = "item.nombre">-->
+         </td>
+     
+         <td>
+          <p appHighlight><label > {{item.mail}} </label></p>
+         <!--<input *ngIf="modificar==item.id" type="text" name="mail{{item.id}}" [(ngModel)] = "item.mail">--->
+          </td>
+
+           <td>
+            <p appHighlight><label> {{item.id}} </label></p>
+            <!--- <input *ngIf="modificar==item.id" type="text" name="id{{item.id}}" [(ngModel)] = "item.id">-->
+               </td> 
+
+               
+                <td>
+                  <button class="btn  btn-primary " type="button" value="modificar" [routerLink]= "['/producto-editar',item.nombre,item.mail,item.id]" >editar</button>
+                  
+                 </td>
+               
+                 <!---<td>//boton para guardar
+                      <button  *ngIf="modificar==item.id"class="btn  btn-success" type="button" value="guardar" (click)="editarUsuario()">Guardar</button>
+                  </td>-->
+               <td>
+                 <button type="button" class="btn btn-danger" (click)="eliminar(item.id)" name="usuario" [id]="item.nombre" >eliminar</button>
+              </td>
+              </tr>
+            </tbody>
+          </table>
+    
+
+     
+</div>
+</div>
+</div>
